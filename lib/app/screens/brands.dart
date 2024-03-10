@@ -8,7 +8,6 @@ class Brands extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(0.9),
-
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -26,14 +25,19 @@ class Brands extends StatelessWidget {
             const SizedBox(height: 15),
             GridView.builder(
               padding: EdgeInsets.zero,
-              itemCount: 12,
+              itemCount: brandsName.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3),
               itemBuilder: (_, i) => Container(
                 margin: const EdgeInsets.all(8),
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.red,
+                  image: DecorationImage(
+                    image: AssetImage(
+                      brandsName[i],
+                    ),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               shrinkWrap: true,
@@ -57,3 +61,16 @@ class Brands extends StatelessWidget {
     );
   }
 }
+
+List<String> brandsName = [
+  'assets/hp.png',
+  'assets/sam.png',
+  'assets/apple.png',
+  'assets/alienware.png',
+  'assets/pana.png',
+  'assets/logic.png',
+  'assets/dji.png',
+  'assets/dell.png',
+  'assets/hi.png',
+  'assets/lg.png',
+];

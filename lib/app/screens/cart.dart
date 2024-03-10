@@ -45,7 +45,10 @@ class Cart extends StatelessWidget {
                         height: 100,
                         width: 100,
                         decoration: const BoxDecoration(
-                          color: Colors.red,
+                          image: DecorationImage(
+                            image: AssetImage('assets/cart.png'),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       const SizedBox(width: 10),

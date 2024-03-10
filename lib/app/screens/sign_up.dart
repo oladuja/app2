@@ -16,7 +16,7 @@ class SignUp extends StatelessWidget {
             width: double.infinity,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/keyboard.png'),
+                image: AssetImage('assets/productslide.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -151,7 +151,7 @@ class SignUp extends StatelessWidget {
                 ),
                 child: const ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: Colors.red,
+                    backgroundImage: AssetImage('assets/pic1.png'),
                     radius: 25,
                   ),
                   title: Text(
@@ -170,7 +170,7 @@ class SignUp extends StatelessWidget {
                 ),
                 child: const ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: Colors.red,
+                    backgroundImage: AssetImage('assets/pic2.png'),
                     radius: 25,
                   ),
                   title: Text(

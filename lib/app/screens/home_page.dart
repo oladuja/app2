@@ -32,7 +32,9 @@ class _HomePageState extends State<HomePage> {
             child: IconButton(
               icon: const Icon(Icons.filter_list),
               onPressed: () => showDialog(
-                  context: context, builder: (_) => const AppDialog()),
+                context: context,
+                builder: (_) => const AppDialog(),
+              ),
             ),
           )
         ],
@@ -80,7 +82,10 @@ class Item extends StatelessWidget {
             Container(
               height: size.height * 0.52,
               decoration: const BoxDecoration(
-                color: Colors.pink,
+                image: DecorationImage(
+                  image: AssetImage('assets/keyboard.png'),
+                  fit: BoxFit.cover,
+                ),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25),
                   topRight: Radius.circular(25),

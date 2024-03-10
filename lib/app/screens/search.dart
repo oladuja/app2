@@ -54,19 +54,24 @@ class Search extends StatelessWidget {
                     crossAxisCount: 2),
                 itemBuilder: (_, i) => Container(
                   margin: const EdgeInsets.all(8),
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(15),
                     ),
-                    color: Colors.red,
+                    image: DecorationImage(
+                      image: AssetImage(
+                        searchList.values.toList()[i],
+                      ),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  child: const Align(
+                  child: Align(
                     alignment: Alignment.bottomCenter,
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'Keyboards',
-                        style: TextStyle(
+                        searchList.keys.toList()[i],
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -84,3 +89,10 @@ class Search extends StatelessWidget {
     );
   }
 }
+
+Map<String, String> searchList = {
+  "keyboard": 'assets/d1.png',
+  "Deskmats": 'assets/d2.png',
+  "PCs": 'assets/s3.png',
+  "Mobile": 'assets/s4.png',
+};

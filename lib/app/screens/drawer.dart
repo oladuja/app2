@@ -75,19 +75,24 @@ class AppDrawer extends StatelessWidget {
                     crossAxisCount: 2),
                 itemBuilder: (_, i) => Container(
                   margin: const EdgeInsets.all(8),
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(15),
                     ),
-                    color: Colors.red,
+                    image: DecorationImage(
+                      image: AssetImage(
+                        drawerList.values.toList()[i],
+                      ),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  child: const Align(
+                  child: Align(
                     alignment: Alignment.bottomCenter,
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'Keyboards',
-                        style: TextStyle(
+                        drawerList.keys.toList()[i],
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -105,3 +110,8 @@ class AppDrawer extends StatelessWidget {
     );
   }
 }
+
+Map<String, String> drawerList = {
+  "keyboard": 'assets/d1.png',
+  "Deskmats": 'assets/d2.png',
+};

@@ -44,6 +44,10 @@ class DetailScreen extends StatelessWidget {
                 width: double.infinity,
                 height: size.height * 0.4,
                 decoration: BoxDecoration(
+                  image: const DecorationImage(
+                    image: AssetImage('assets/keyboard.png'),
+                    fit: BoxFit.cover,
+                  ),
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(
                     color: Colors.black,
@@ -153,6 +157,10 @@ class OtherLike extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(color: Colors.white),
               borderRadius: BorderRadius.circular(15.0),
+              image: const DecorationImage(
+                image: AssetImage('assets/keyboard.png'),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(height: 10),
