@@ -28,10 +28,10 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-              icon: const Icon(Icons.filter_list),
-              onPressed: () => showDialog(
+            padding: const EdgeInsets.all(15.0),
+            child: GestureDetector(
+              child: Image.asset('assets/filter.png'),
+              onTap: () => showDialog(
                 context: context,
                 builder: (_) => const AppDialog(),
               ),
@@ -80,7 +80,7 @@ class Item extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: size.height * 0.52,
+              height: size.height * 0.6,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/keyboard.png'),
@@ -180,6 +180,8 @@ class _AppDialogState extends State<AppDialog> {
 
   var value = false;
 
+  int selected = 1;
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -217,45 +219,89 @@ class _AppDialogState extends State<AppDialog> {
             const SizedBox(height: 5),
             Row(
               children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25),
-                      bottomLeft: Radius.circular(25),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selected = 1;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color:
+                            selected == 1 ? Colors.yellow : Colors.transparent,
+                      ),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(25),
+                        bottomLeft: Radius.circular(25),
+                      ),
+                      color: selected == 1 ? Colors.transparent : Colors.white,
                     ),
-                    color: Colors.white,
-                  ),
-                  height: 50,
-                  width: 100,
-                  child: const Center(
-                    child: Text('LG'),
+                    height: 50,
+                    width: 100,
+                    child: Center(
+                      child: Text(
+                        'LG',
+                        style: TextStyle(
+                          color: selected == 1 ? Colors.yellow : Colors.black,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  height: 50,
-                  width: 100,
-                  child: const Center(
-                    child: Text('Hisense'),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selected = 2;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color:
+                            selected == 2 ? Colors.yellow : Colors.transparent,
+                      ),
+                      color: selected == 2 ? Colors.transparent : Colors.white,
+                    ),
+                    height: 50,
+                    width: 100,
+                    child: Center(
+                      child: Text(
+                        'Hisense',
+                        style: TextStyle(
+                          color: selected == 2 ? Colors.yellow : Colors.black,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.yellow),
-                    borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(25),
-                      bottomRight: Radius.circular(25),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selected = 3;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color:
+                            selected == 3 ? Colors.yellow : Colors.transparent,
+                      ),
+                      borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(25),
+                        bottomRight: Radius.circular(25),
+                      ),
+                      color: selected == 3 ? Colors.transparent : Colors.white,
                     ),
-                    color: Colors.transparent,
-                  ),
-                  height: 50,
-                  width: 100,
-                  child: const Center(
-                    child: Text(
-                      'HP',
-                      style: TextStyle(color: Colors.yellow),
+                    height: 50,
+                    width: 100,
+                    child: Center(
+                      child: Text(
+                        'HP',
+                        style: TextStyle(
+                          color: selected == 3 ? Colors.yellow : Colors.black,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -282,6 +328,7 @@ class _AppDialogState extends State<AppDialog> {
             ),
             RangeSlider(
               activeColor: Colors.yellow,
+              inactiveColor: Colors.white,
               min: 20,
               max: 2000,
               values: RangeValues(start, end),

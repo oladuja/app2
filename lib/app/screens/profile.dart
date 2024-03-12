@@ -1,3 +1,4 @@
+import 'package:app2/app/screens/sign_up.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
@@ -20,7 +21,7 @@ class Profile extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       body: Container(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(15),
         height: size.height,
         width: size.width,
         child: Column(
@@ -29,11 +30,12 @@ class Profile extends StatelessWidget {
             const SizedBox(height: 25),
             Center(
               child: Container(
-                width: size.width * 0.7,
+                // width: size.width * 0.7,
+                width: double.infinity,
                 height: 55,
                 padding: const EdgeInsets.symmetric(
                   vertical: 15,
-                  horizontal: 15,
+                  horizontal: 45,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.black,
@@ -41,7 +43,7 @@ class Profile extends StatelessWidget {
                     color: Colors.yellow,
                     width: 1.5,
                   ),
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(97),
                 ),
                 child: const Text(
                   'Username',
@@ -60,7 +62,7 @@ class Profile extends StatelessWidget {
                 border: Border.all(color: Colors.grey),
               ),
               padding: const EdgeInsets.all(15.0),
-              margin: const EdgeInsets.symmetric(horizontal: 15),
+              // margin: const EdgeInsets.symmetric(horizontal: 15),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -108,35 +110,46 @@ class Profile extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
-            Center(
-              child: Container(
-                width: size.width * 0.68,
-                height: 45,
-                padding: const EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  color: Colors.grey,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 1.5,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const SignUp()),
+              ),
+              child: Center(
+                child: Container(
+                  // width: size.width * 0.68,
+                  width: double.infinity,
+                  height: 45,
+                  padding: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 1.5,
+                    ),
+                    borderRadius: BorderRadius.circular(97),
                   ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Center(
-                  child: Text(
-                    'Log Out',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                  child: const Center(
+                    child: Text(
+                      'Log Out',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
             const SizedBox(height: 15),
-            const Center(
-              child: Text(
-                'Delete account',
-                style: TextStyle(
-                  color: Colors.grey,
+            Center(
+              child: GestureDetector(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const SignUp()),
+                ),
+                child: const Text(
+                  'Delete account',
+                  style: TextStyle(
+                    color: Colors.grey,
+                  ),
                 ),
               ),
             )

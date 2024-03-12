@@ -1,9 +1,26 @@
 import 'package:app2/app/screens/registration.dart';
 import 'package:flutter/material.dart';
 
-class Brands extends StatelessWidget {
+class Brands extends StatefulWidget {
   const Brands({super.key});
 
+  @override
+  State<Brands> createState() => _BrandsState();
+}
+
+class _BrandsState extends State<Brands> {
+  Map<String, bool> brandsClicked = {
+    'hp': false,
+    'samsung': false,
+    'apple': false,
+    'alienware': false,
+    'panasonic': false,
+    'logitech': false,
+    'dji': false,
+    'dell': false,
+    'hisense': false,
+    'lg': false,
+  };
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,15 +45,29 @@ class Brands extends StatelessWidget {
               itemCount: brandsName.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3),
-              itemBuilder: (_, i) => Container(
-                margin: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage(
-                      brandsName[i],
+              itemBuilder: (_, i) => GestureDetector(
+                onTap: () {
+                  setState(() {
+                    brandsClicked[brandsClicked.keys.elementAt(i)] =
+                        !brandsClicked.values.elementAt(i);
+                  });
+                },
+                child: Container(
+                  margin: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: brandsClicked.values.elementAt(i)
+                          ? Colors.yellow
+                          : Colors.black,
+                      width: 2,
                     ),
-                    fit: BoxFit.cover,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(
+                        brandsName[i],
+                      ),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

@@ -19,7 +19,7 @@ class AppDrawer extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
               Row(
@@ -31,14 +31,14 @@ class AppDrawer extends StatelessWidget {
                       decoration: InputDecoration(
                         hintText: 'Search for your wishlist...',
                         contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 8),
+                            const EdgeInsets.symmetric(horizontal: 15),
                         enabled: true,
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(97),
                           borderSide: const BorderSide(color: Colors.black),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(97),
                           borderSide: const BorderSide(color: Colors.black),
                         ),
                       ),

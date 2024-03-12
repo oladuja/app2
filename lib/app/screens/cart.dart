@@ -25,7 +25,7 @@ class Cart extends StatelessWidget {
           width: size.width,
           height: size.height,
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(15.0),
             child: Column(
               children: [
                 Container(
@@ -42,8 +42,8 @@ class Cart extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: 100,
-                        width: 100,
+                        height: 90,
+                        width: 90,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('assets/cart.png'),
@@ -152,7 +152,7 @@ class Cart extends StatelessWidget {
                           color: Colors.black,
                           width: 1.5,
                         ),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(97),
                       ),
                       child: const Center(
                         child: Text(

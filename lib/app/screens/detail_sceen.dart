@@ -1,4 +1,3 @@
-import 'package:app2/app/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -21,18 +20,6 @@ class DetailScreen extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-              icon: const Icon(Icons.filter_list),
-              onPressed: () => showDialog(
-                context: context,
-                builder: (_) => const AppDialog(),
-              ),
-            ),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Padding(

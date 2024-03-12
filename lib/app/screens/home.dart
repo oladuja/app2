@@ -40,25 +40,45 @@ class _HomeState extends State<Home> {
         iconSize: 28,
         unselectedFontSize: 0,
         selectedFontSize: 0,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: Image.asset(
+              'assets/home.png',
+              height: 30,
+              color: currentpage == 0 ? Colors.yellow : Colors.white,
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_outlined),
+            icon: Image.asset(
+              'assets/store.png',
+              height: 30,
+              color: currentpage == 1 ? Colors.yellow : Colors.white,
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: Image.asset(
+              'assets/search.png',
+              height: 30,
+              color: currentpage == 2 ? Colors.yellow : Colors.white,
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
+            icon: Image.asset(
+              'assets/shopcart.png',
+              height: 30,
+              color: currentpage == 3 ? Colors.yellow : Colors.white,
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
+            icon: Image.asset(
+              'assets/users.png',
+              height: 30,
+              color: currentpage == 4 ? Colors.yellow : Colors.white,
+            ),
             label: '',
           ),
         ],

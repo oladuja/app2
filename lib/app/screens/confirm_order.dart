@@ -9,13 +9,19 @@ class Order extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: size.width,
         height: size.height,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 100),
+            Image.asset(
+              'assets/sucess.png',
+              width: 150,
+              height: 150,
+            ),
+            const SizedBox(height: 15),
             const Text(
               'Order Confirmed',
               style: TextStyle(
@@ -41,7 +47,7 @@ class Order extends StatelessWidget {
                       color: Colors.black,
                       width: 1.5,
                     ),
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(97),
                   ),
                   child: const Center(
                     child: Text(
