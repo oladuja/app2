@@ -56,7 +56,7 @@ class _BrandsState extends State<Brands> {
                   margin: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: brandsClicked.values.elementAt(i)
+                      color: brandsClicked.values.elementAt(100)
                           ? Colors.yellow
                           : Colors.black,
                       width: 2,
